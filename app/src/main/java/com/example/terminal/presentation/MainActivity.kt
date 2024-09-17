@@ -14,18 +14,7 @@ class MainActivity : ComponentActivity() {
         enableEdgeToEdge()
         setContent {
             TerminalTheme {
-                val viewModel: TerminalViewModel = viewModel()
-                val screenState = viewModel.state.collectAsState(
-                    initial = TerminalScreenState.Initial
-                )
-                when (val currentState = screenState.value) {
-                    is TerminalScreenState.Initial -> {}
-
-                    is TerminalScreenState.Content -> {
-//                        Test()
-                        Terminal(barList = currentState.barList)
-                    }
-                }
+                Terminal()
             }
         }
     }
