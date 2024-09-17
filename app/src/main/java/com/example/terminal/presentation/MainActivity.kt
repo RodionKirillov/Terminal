@@ -23,8 +23,8 @@ class MainActivity : ComponentActivity() {
                     is TerminalScreenState.Initial -> {}
 
                     is TerminalScreenState.Content -> {
-                        Test()
-//                        Terminal(barList = currentState.barList)
+//                        Test()
+                        Terminal(barList = currentState.barList)
                     }
                 }
             }
