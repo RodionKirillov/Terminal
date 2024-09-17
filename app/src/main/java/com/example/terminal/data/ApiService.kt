@@ -1,9 +1,12 @@
 package com.example.terminal.data
 
 import retrofit2.http.GET
+import retrofit2.http.Path
 
 interface ApiService {
 
-    @GET("v2/aggs/ticker/AAPL/range/1/hour/2023-09-16/2024-09-16?adjusted=true&sort=desc&limit=50000&apiKey=yQI2Yyniqe_xaZppzsoPr7nlPhPqqVmK")
-    suspend fun loadBars(): Result
+    @GET("v2/aggs/ticker/AAPL/range/{timeframe}/2023-09-16/2024-09-16?adjusted=true&sort=desc&limit=50000&apiKey=yQI2Yyniqe_xaZppzsoPr7nlPhPqqVmK")
+    suspend fun loadBars(
+        @Path("timeframe") timeFrame: String
+    ): Result
 }
